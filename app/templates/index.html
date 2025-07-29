@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webinar Chatbot</title>
+</head>
+<body>
+    <h2>Webinar Registration Chatbot</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+    <script>
+        async function sendMessage(){
+            const msg = document.getElementById("userInput").value;
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({"message": msg})
+            });
+            const data = await res.json();
+            document.getElementById("chatbox").innerHTML += "<p><b>You:</b> " + msg + "</p>";
+            document.getElementById("chatbox").innerHTML += "<p><b>Bot:</b> " + data.response + "</p>";
+        }
+    </script>
+</body>
+</html>

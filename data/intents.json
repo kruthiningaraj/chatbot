@@ -1,0 +1,9 @@
+{
+  "intents": [
+    {"tag": "greeting", "patterns": ["Hi", "Hello", "Hey"], "responses": ["Hello! How can I help you with the webinar today?"]},
+    {"tag": "register_webinar", "patterns": ["Register me for the webinar"], "responses": ["Sure! Please provide your name and email."]},
+    {"tag": "faq", "patterns": ["When is the webinar?", "What time does it start?"], "responses": ["The webinar is scheduled for May 20th at 5 PM."]},
+    {"tag": "feedback", "patterns": ["I want to give feedback"], "responses": ["Sure! Please type your feedback."]},
+    {"tag": "certificate", "patterns": ["Download my certificate"], "responses": ["Please provide your registered email to generate your certificate."]}
+  ]
+}
